@@ -8,6 +8,8 @@ const getWeather = require('./utils/weather');
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 // Paths for Express
 const sPublicDirPath = path.join(__dirname, './../public');
 const sViewsPath = path.join(__dirname, './../templates/views');
@@ -56,6 +58,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.listen(port, () => {
+    console.log('Server is running on port', port);
 })
